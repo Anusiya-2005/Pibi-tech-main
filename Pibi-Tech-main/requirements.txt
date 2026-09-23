@@ -1,0 +1,4 @@
+mongodb 
+nodemailer 
+googleapis
+axios
