@@ -7,11 +7,6 @@ const globalOffices = [
     address: ["Pflugerville, Travis, Texas 78660"],
   },
   {
-    country: "Canada",
-    icon: "/canada.png",
-    address: ["Whitby, Durham Region, Ontario L1N 4W2"],
-  },
-  {
     country: "Germany",
     icon: "/germany.png",
     address: ["Erkelenz, Königsbergerstr. 19, 41812"],
@@ -30,14 +25,9 @@ const indiaOffices = [
     address: ["Tharamani, Chennai - 600 113"],
   },
   {
-    city: "Coimbatore",
-    icon: "/coimbatore.png",
-    address: ["Peelamedu, Coimbatore - 641004"],
-  },
-  {
     city: "Madurai",
     icon: "/madurai.png",
-    address: ["Bi Bi Kulam, Madurai - 625002"],
+    address: ["Thiruppalai, Madurai - 625014"],
   },
 ];
 
@@ -50,7 +40,7 @@ export default function GlobalLocations() {
             Global Offices
           </h2>
 
-          <div className="grid gap-8 grid-cols-2 md:grid-cols-4">
+          <div className="grid gap-8 grid-cols-2 md:grid-cols-3 max-w-4xl mx-auto">
             {globalOffices.map((loc, i) => (
               <div
                 key={i}
@@ -84,7 +74,7 @@ export default function GlobalLocations() {
             India Offices
           </h2>
 
-          <div className="grid gap-8 grid-cols-2 sm:grid-cols-3">
+          <div className="grid gap-8 grid-cols-2 max-w-2xl mx-auto">
             {indiaOffices.map((loc, i) => (
               <div
                 key={i}

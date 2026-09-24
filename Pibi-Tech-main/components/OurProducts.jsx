@@ -68,7 +68,7 @@ export default function OurProducts() {
   ];
 
   const Card = ({ product }) => (
-    <div className="relative bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+    <div className="relative bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full w-full">
       <div>
         <span className="inline-block text-md font-semibold text-primary bg-primary/10 py-1 px-3 rounded-full mb-4">
           {product.tag}
@@ -128,7 +128,7 @@ export default function OurProducts() {
             }}
           >
             {products.map((product, index) => (
-              <SwiperSlide className="py-10 h-full" key={index}>
+              <SwiperSlide className="py-10 flex !h-auto w-full" key={index}>
                 <Card product={product} />
               </SwiperSlide>
             ))}

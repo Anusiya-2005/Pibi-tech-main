@@ -95,7 +95,7 @@ const AgentsDetails = ({ title, id }) => {
   const Card = ({ card }) => (
     <div
       onClick={card.onClick}
-      className={`border-2 border-[#000052] min-h-150 p-8 flex flex-col justify-between group hover:shadow-lg transition-shadow cursor-pointer ${card.variant === "blue" ? "bg-linear-to-r from-[#2563eb] to-[#059669] text-white transition-all" : "bg-white"}`}
+      className={`border-2 border-[#000052] min-h-150 h-full w-full p-8 flex flex-col justify-between group hover:shadow-lg transition-shadow cursor-pointer ${card.variant === "blue" ? "bg-linear-to-r from-[#2563eb] to-[#059669] text-white transition-all" : "bg-white"}`}
     >
       <div>
         <div className="flex items-start justify-between mb-8">
@@ -215,7 +215,7 @@ const AgentsDetails = ({ title, id }) => {
             className="h-max"
           >
             {cards.map((card) => (
-              <SwiperSlide className="py-10 h-full" key={card.id}>
+              <SwiperSlide className="py-10 flex !h-auto w-full" key={card.id}>
                 <Card card={card} />
               </SwiperSlide>
             ))}

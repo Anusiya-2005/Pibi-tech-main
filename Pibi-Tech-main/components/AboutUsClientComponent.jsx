@@ -81,7 +81,7 @@ const offerings = [
 const OfferingCard = ({ offering, size = true }) =>
   offering && (
     <div
-      className={`${offering?.color} rounded-xl ${size ? "md:min-h-100" : "md:min-h-80"} relative p-6 border border-slate-200 h-full flex flex-col justify-between`}
+      className={`${offering?.color} rounded-xl ${size ? "md:min-h-100" : "md:min-h-80"} relative p-6 border border-slate-200 h-full w-full flex flex-col justify-between`}
     >
       <div className="absolute -top-5 -right-5 rotate-12 opacity-20">
         <div className="w-32 aspect-square relative">
@@ -120,17 +120,28 @@ const OfferingCard = ({ offering, size = true }) =>
 const AboutUsClientComponent = () => {
   const teams = [
     {
-      name: "Siranjeevi Ramdoss                                                                                                                                                                 ",
+      name: "Siranjeevi Ramdoss",
       role: "Founder & CEO",
       linkedinUrl: "https://www.linkedin.com/in/siranjeevi-automation/",
+      image: "/siranjeevi.jpg",
       description:
         "Complete production deployment in 6–8 weeks  compared to the 3–4 month industry average.",
     },
     {
       name: "Palani Kumar Murugesan",
-      role: "CT0",
+      role: "CTO",
       linkedinUrl:
         "https://www.linkedin.com/in/palani-kumar-murugesan-5b2824b9/",
+      image: "/palanisir.jpeg",
+      description:
+        "Significant reduction in administrative workload for our leading enterprise and healthcare providers.",
+    },
+    {
+      name: "Arsha Fahima",
+      role: "Business Development Manager",
+      linkedinUrl:
+        "https://www.linkedin.com/in/arsha-fahima/",
+      image: "/arsha.jpg",
       description:
         "Significant reduction in administrative workload for our leading enterprise and healthcare providers.",
     },
@@ -277,7 +288,7 @@ const AboutUsClientComponent = () => {
               autoplay={{ delay: 4000, disableOnInteraction: false }}
             >
               {offerings.map((offering) => (
-                <SwiperSlide className="py-10 h-full" key={offering.id}>
+                <SwiperSlide className="py-10 flex !h-auto w-full" key={offering.id}>
                   <OfferingCard offering={offering} />
                 </SwiperSlide>
               ))}
@@ -319,7 +330,7 @@ const AboutUsClientComponent = () => {
               className="h-max"
             >
               {approaches.map((item) => (
-                <SwiperSlide className="py-10 h-full" key={item.id}>
+                <SwiperSlide className="py-10 flex !h-auto w-full" key={item.id}>
                   <OfferingCard offering={item} size={false} />
                 </SwiperSlide>
               ))}
@@ -390,7 +401,7 @@ const AboutUsClientComponent = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {teams.map((item, index) => {
               return (
                 <div
@@ -399,10 +410,10 @@ const AboutUsClientComponent = () => {
                 >
                   <div className="relative mx-auto mb-4 h-28 w-28">
                     <Image
-                      src={`/team${index + 1}.jpeg`}
+                      src={item.image}
                       alt={item?.name}
                       fill
-                      className="rounded-full object-cover border-4 border-white shadow-md"
+                      className="rounded-full object-cover object-top border-4 border-white shadow-md"
                     />
                   </div>
 

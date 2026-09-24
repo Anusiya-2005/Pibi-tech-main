@@ -28,7 +28,7 @@ export default function Navbar() {
                 className="object-contain"
               />
             </div>
-            <span className="hidden sm:inline">Pibi Tech</span>
+            <span className="hidden sm:inline">Pi Bi Tech</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
