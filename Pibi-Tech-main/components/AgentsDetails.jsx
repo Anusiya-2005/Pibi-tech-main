@@ -3,14 +3,6 @@
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Controller, Pagination } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/controller";
-import "swiper/css/autoplay";
-import "swiper/css/pagination";
 import Image from "next/image";
 
 const AgentsDetails = ({ title, id }) => {
@@ -18,208 +10,112 @@ const AgentsDetails = ({ title, id }) => {
 
   const cards = [
     {
-      id: 4,
-      number: "01",
-      title: "Business Intelligence",
-      description:
-        "We design modern BI systems that turn raw data into clear insights, enabling faster decisions, performance tracking, and revenue visibility across the organization.",
-      tags: [
-        "Data Modeling",
-        "Analytics Dashboards",
-        "KPI Frameworks",
-        "Self-Service BI",
-      ],
-      onClick: () => router.push("/bussiness-intelligent"),
-      variant: "light",
-    },
-    {
-      id: 5,
-      number: "02",
-      title: "AI Knowledge Base",
-      description:
-        "We build intelligent, searchable knowledge systems that centralize enterprise information and power accurate answers, automation, and decision support.",
-      tags: [
-        "Knowledge Graphs",
-        "Semantic Search",
-        "Vector Databases",
-        "Enterprise RAG",
-      ],
-      onClick: () => router.push("/ai-knowledge-base"),
-      variant: "blue",
-    },
-    // {
-    //   id: 6,
-    //   number: "03",
-    //   title: "Data Engineering",
-    //   description:
-    //     "We architect scalable data pipelines and platforms that ensure reliable, high-quality data flows for analytics, AI, and business applications.",
-    //   tags: [
-    //     "Data Pipelines",
-    //     "ETL / ELT",
-    //     "Streaming Data",
-    //     "Data Warehousing",
-    //   ],
-    //   onClick: () => router.push("/contact-us"),
-    //   variant: "light",
-    // },
-    {
       id: 1,
-      number: "03",
-      title: "Agentic AI",
-      description:
-        "We help you build and modernize your AI Stack so AI agents can plug in seamlessly and deliver real business impact.",
-      tags: [
-        "RAG",
-        "MCP",
-        "Skills",
-        "A2A",
-        "Agentic RAG",
-        "Context Engineering",
-        "LLMOps",
-      ],
-      onClick: () => router.push("/agentic-ai"),
-      variant: "light",
+      title: "AI/ML",
+      description: "Empower your business with predictive models, deep learning, and intelligent automation to unlock new opportunities.",
+      image: "/final_ai.jpg",
+      link: "/contact-us"
     },
     {
       id: 2,
-      number: "04",
-      title: "Intelligent Infrastructure",
-      description:
-        "We build infrastructure that thinks, combining agentic AI and cloud ops into systems that adapt, learn, and scale.",
-      tags: ["Infrastructure as a code", "Monitoring", "Observability", "SLO"],
-      onClick: () => router.push("/intelligent-infrastructure"),
-      variant: "blue",
+      title: "Data",
+      description: "Transform raw data into actionable insights with robust data pipelines, modern data warehousing, and advanced analytics.",
+      image: "/final_data.jpg",
+      link: "/contact-us"
+    },
+    {
+      id: 3,
+      title: "Cloud & Infrastructure",
+      description: "Build scalable, secure, and resilient cloud architectures that drive agility and modernize your IT foundation.",
+      image: "/final_cloud.jpg",
+      link: "/contact-us"
+    },
+    {
+      id: 4,
+      title: "Product Engineering",
+      description: "Accelerate your product lifecycle with end-to-end engineering, from ideation and prototyping to deployment and scale.",
+      image: "/final_product.jpg",
+      link: "/contact-us"
+    },
+    {
+      id: 5,
+      title: "Digital Engineering",
+      description: "Create seamless, user-centric digital experiences by modernizing legacy systems and adopting cutting-edge tech stacks.",
+      image: "/final_digital.jpg",
+      link: "/contact-us"
+    },
+    {
+      id: 6,
+      title: "Security & GRC",
+      description: "Safeguard your enterprise with comprehensive cybersecurity strategies, compliance frameworks, and proactive risk management.",
+      image: "/final_security.jpg",
+      link: "/contact-us"
     },
   ];
 
   const Card = ({ card }) => (
     <div
-      onClick={card.onClick}
-      className={`border-2 border-[#000052] min-h-150 h-full w-full p-8 flex flex-col justify-between group hover:shadow-lg transition-shadow cursor-pointer ${card.variant === "blue" ? "bg-linear-to-r from-[#2563eb] to-[#059669] text-white transition-all" : "bg-white"}`}
+      onClick={() => router.push(card.link)}
+      className="group flex flex-col overflow-hidden rounded-xl cursor-pointer bg-[#0b101a] border border-[#1f2937] hover:border-blue-500/50 transition-colors duration-300 h-full"
     >
-      <div>
-        <div className="flex items-start justify-between mb-8">
-          <div className={`relative w-12 h-12`}>
-            <Image
-              src="/pi.png"
-              alt="PI-BI Technologies"
-              fill
-              className={`object-contain ${card.variant === "blue" ? "" : "invert"}`}
-            />
-          </div>
-
-          <span
-            className={`text-[55px] font-bold leading-[1.1]
-              ${card.variant === "blue" ? "text-white" : "text-slate-400"}
-            `}
-          >
-            {card.number}
-          </span>
-        </div>
-
-        <h3
-          className={`text-[35px] font-bold leading-[1.1] mb-4
-            ${card.variant === "blue" ? "text-white" : "text-[#000052]"}
-          `}
-        >
-          {card.title}
-        </h3>
-
-        <p
-          className={`text-lg font-medium leading-[1.1] mb-6
-            ${card.variant === "blue" ? "text-white" : "text-slate-700"}
-          `}
-        >
-          {card.description}
-        </p>
-
-        <div className="flex flex-wrap gap-2 mb-6">
-          {card.tags.map((tag, idx) => (
-            <span
-              key={idx}
-              className={`px-3 py-1 text-xs font-bold uppercase tracking-wider border
-                ${
-                  card.variant === "blue"
-                    ? "border-white/20 bg-[#248BB3] text-white"
-                    : "border-slate-300 bg-slate-100 text-slate-700"
-                }
-              `}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+      {/* Top Half: Image */}
+      <div className="relative w-full h-[220px] overflow-hidden">
+        <Image
+          src={card.image}
+          alt={card.title}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        {/* Subtle gradient to blend into the card background */}
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0b101a] to-transparent"></div>
       </div>
 
-      <div
-        className={`pt-6 border-t
-          ${card.variant === "blue" ? "border-white" : "border-slate-300"}
-        `}
-      >
-        <button
-          className={`flex items-center gap-2 text-sm font-bold uppercase tracking-[1.4px]
-            ${
-              card.variant === "blue"
-                ? "hover:opacity-80"
-                : "text-slate-600 hover:text-[#000052]"
-            }
-          `}
-        >
-          Learn more
-          <ArrowRight className="w-5 h-5" />
-        </button>
+      {/* Bottom Half: Content */}
+      <div className="p-6 md:p-8 flex flex-col flex-grow">
+        <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
+        
+        <p className="text-slate-300 text-[15px] leading-relaxed mb-8">
+          {card.description}
+        </p>
+        
+        {/* Arrow Icon */}
+        <div className="mt-auto w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#0b101a] transition-colors">
+          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+        </div>
       </div>
     </div>
   );
 
   return (
-    <section className="relative py-8 overflow-hidden" id={id || "Solutions"}>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-12 md:mb-20 pb-8 border-b border-slate-300">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[68px] font-bold leading-tight md:leading-[0.8] tracking-[-1.8px] text-[#000052]">
-            {title ? (
-              <div>{title}</div>
-            ) : (
-              <>
-                <div>Industry Standard</div>
-                <div>solutions that scale</div>
-                <div>with you</div>
-              </>
-            )}
+    <section className="relative py-20 overflow-hidden bg-[linear-gradient(135deg,#1f6fb2,#2ec4b6)]" id={id || "Solutions"}>
+      {/* Side Vignette (Dark edges) */}
+      <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
+
+      {/* Network Pattern Overlay */}
+      <div 
+        className="absolute inset-0 z-0 opacity-40 pointer-events-none mix-blend-overlay"
+        style={{
+          backgroundImage: "url('/network.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
+      ></div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
+        <div className="flex flex-col items-center text-center gap-6 mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+            {title ? title : "Diverse Tech Innovated Digital Solutions."}
           </h2>
 
-          <p className="max-w-full md:max-w-[384px] text-base md:text-lg font-medium text-slate-700 leading-relaxed md:leading-[1.1]">
-            We engineer the digital backbone of modern enterprises with
-            precision and foresight.
+          <p className="max-w-3xl text-base md:text-lg text-slate-300 leading-relaxed">
+            Explore our varied range of latest technology expertise that enables us to quickly transform your business into "smart" business and keeps you ahead in the marketplace.
           </p>
         </div>
 
-        <div className="block px-3 h-full">
-          <Swiper
-            modules={[Pagination, Autoplay, Controller]}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            loop={true}
-            spaceBetween={20}
-            slidesPerView={1}
-            breakpoints={{
-              320: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
-              640: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-            }}
-            className="h-max"
-          >
-            {cards.map((card) => (
-              <SwiperSlide className="py-10 flex !h-auto w-full" key={card.id}>
-                <Card card={card} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {cards.map((card) => (
+            <Card key={card.id} card={card} />
+          ))}
         </div>
       </div>
     </section>
