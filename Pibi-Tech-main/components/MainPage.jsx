@@ -144,20 +144,20 @@ export function MainPage() {
               <div className="relative z-10 w-full px-6 md:px-16 lg:px-24 xl:px-32 text-left">
                 <div className="max-w-3xl">
                   {slide.eyebrow && (
-                    <p className="mb-4 text-teal-400 text-sm md:text-base font-bold uppercase tracking-[0.2em]">
+                    <p className="mb-4 text-teal-400 text-sm md:text-base font-bold uppercase tracking-[0.2em] animate-on-active">
                       {slide.eyebrow}
                     </p>
                   )}
 
-                  <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+                  <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] mb-6 animate-on-active delay-100">
                     {slide.title}
                   </h1>
                   
-                  <p className="mt-6 max-w-2xl text-lg md:text-xl text-slate-300 mb-10 leading-relaxed">
+                  <p className="mt-6 max-w-2xl text-lg md:text-xl text-slate-300 mb-10 leading-relaxed animate-on-active delay-200">
                     {slide.subtitle}
                   </p>
 
-                  <div>
+                  <div className="animate-on-active delay-300">
                     <button
                       onClick={() => router.push(slide.link)}
                       className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-br from-[#1f6fb2] to-[#2ec4b6] px-8 py-4 text-lg font-semibold text-white transition-all hover:opacity-90 shadow-[0_0_20px_rgba(31,111,178,0.3)] hover:shadow-[0_0_30px_rgba(46,196,182,0.4)]"

@@ -321,3 +321,20 @@
 .custom-scroll::-webkit-scrollbar-thumb:hover {
   opacity: 0.8;
 }
+
+/* Swiper slide-in animations */
+.swiper-slide .animate-on-active {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.swiper-slide-active .animate-on-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.swiper-slide-active .delay-100 { transition-delay: 100ms; }
+.swiper-slide-active .delay-200 { transition-delay: 200ms; }
+.swiper-slide-active .delay-300 { transition-delay: 300ms; }
+.swiper-slide-active .delay-400 { transition-delay: 400ms; }
