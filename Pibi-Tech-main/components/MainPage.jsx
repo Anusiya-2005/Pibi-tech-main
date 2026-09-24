@@ -196,11 +196,11 @@ export function MainPage() {
               </button>
             </div>
 
-            <div className="mt-20">
+            {/* <div className="mt-20">
               <p className="mb-8 text-xl text-black/70">
                 Trusted by Global Enterprises and Business Leaders
               </p>
-            </div>
+            </div> */}
           </div>
         </SwiperSlide>
         {slides.slice(2).map((slide) => (
@@ -240,7 +240,7 @@ export function MainPage() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Slider />
+      {/* <Slider /> */}
     </section>
   );
 }

@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import axios from "axios";
 
-const client = new MongoClient(process.env.MONGODB_URL);
+export const dynamic = "force-dynamic";
 
 async function getZoomAccessToken() {
   const response = await axios.post(
@@ -24,6 +24,7 @@ async function getZoomAccessToken() {
 }
 
 export async function POST(req) {
+  const client = new MongoClient(process.env.MONGODB_URL || "");
   try {
     const body = await req.json();
 

@@ -13,7 +13,7 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import Image from "next/image";
 
-const AgentsDetails = () => {
+const AgentsDetails = ({ title, id }) => {
   const router = useRouter();
 
   const cards = [
@@ -173,13 +173,19 @@ const AgentsDetails = () => {
   );
 
   return (
-    <section className="relative py-8 overflow-hidden" id="Solutions">
+    <section className="relative py-8 overflow-hidden" id={id || "Solutions"}>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-12 md:mb-20 pb-8 border-b border-slate-300">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[68px] font-bold leading-tight md:leading-[0.8] tracking-[-1.8px] text-[#000052]">
-            <div>Industry Standard</div>
-            <div>solutions that scale</div>
-            <div>with you</div>
+            {title ? (
+              <div>{title}</div>
+            ) : (
+              <>
+                <div>Industry Standard</div>
+                <div>solutions that scale</div>
+                <div>with you</div>
+              </>
+            )}
           </h2>
 
           <p className="max-w-full md:max-w-[384px] text-base md:text-lg font-medium text-slate-700 leading-relaxed md:leading-[1.1]">

@@ -49,10 +49,11 @@ export default function HomePage() {
           </button>
         </div>
       </section>
-      <MissionVisionOfferings />
+      {/* <MissionVisionOfferings /> */}
+      <AgentsDetails title="Our Services" id="Services" />
       {/* <WhyChooseUs /> */}
       <OurProducts />
-      <AgentsDetails />
+      {/* <AgentsDetails /> */}
       {/* <TechInovation /> */}
       <Specialist />
       <PerformanceGuarantee />

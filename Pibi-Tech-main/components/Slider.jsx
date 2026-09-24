@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 import Image from "next/image";
 const Slider = () => {
   return (
-    <div>
+    /* <div>
       <Marquee
         speed={30}
         direction="left"
@@ -24,7 +24,8 @@ const Slider = () => {
           </div>
         ))}
       </Marquee>
-    </div>
+    </div> */
+    null
   );
 };
 
