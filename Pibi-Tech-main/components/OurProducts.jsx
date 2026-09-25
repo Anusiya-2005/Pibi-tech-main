@@ -26,7 +26,7 @@ export default function OurProducts() {
       description: "Architect and deploy scalable, high-performance infrastructure specifically designed for the massive compute requirements of AI training and inference.",
       buttonText: "Discover Infrastructure",
       image: "/cloud_card.jpg",
-      video: "/ai (1).mp4",
+      video: "/123.mp4",
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ export default function OurProducts() {
       description: "Deploy proprietary foundational models trained on your enterprise data within your own secure perimeter, ensuring complete data privacy and maximum business relevance.",
       buttonText: "Explore Solutions",
       image: "/ai_ml_card.jpg",
-      video: "/Video Project 2.mp4",
+      video: "/pr.mp4",
     },
   ];
 
