@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
 
+import CaseStudies from "@/components/CaseStudies";
+
 export default function HomePage() {
   const router = useRouter();
   return (
@@ -56,14 +58,14 @@ export default function HomePage() {
       {/* <AgentsDetails /> */}
       {/* <TechInovation /> */}
       <Specialist />
-      <PerformanceGuarantee />
-      <Roadmap />
+      {/* <PerformanceGuarantee /> */}
+      <CaseStudies />
+      {/* <Roadmap />
       <CTASection
         title="Planning your next product build?"
         content="Align strategy, design, and engineering under one expert team."
         ctaText1="Talk to Product Experts"
-      />
-      {/* <RecentEngagements /> */}
+      /> */}
     </div>
   );
 }

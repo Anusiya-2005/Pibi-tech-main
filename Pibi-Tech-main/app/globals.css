@@ -338,3 +338,18 @@
 .swiper-slide-active .delay-200 { transition-delay: 200ms; }
 .swiper-slide-active .delay-300 { transition-delay: 300ms; }
 .swiper-slide-active .delay-400 { transition-delay: 400ms; }
+
+/* Custom Swiper Pagination */
+.custom-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.custom-pagination .swiper-pagination-bullet-active {
+  background: white;
+  width: 24px;
+  border-radius: 4px;
+}
+
