@@ -21,13 +21,18 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h4 className="text-white font-bold mb-4">Products</h4>
+            <h4 
+              className="font-bold mb-4 text-lg"
+              style={{ backgroundImage: 'linear-gradient(135deg, #1f6fb2, #2ec4b6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+            >
+              Products
+            </h4>
             <ul className="space-y-2">
               
                 <li>
                 <Link
                   href="https://scaluplayout.vercel.app/"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   Scalup
                 </Link>
@@ -35,7 +40,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/profit-engine"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   Profit Engine
                 </Link>
@@ -43,7 +48,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="https://www.astrokids.ai/"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   Astro Kids
                 </Link>
@@ -51,7 +56,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/compliance-bot"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   Compliance Guard
                 </Link>
@@ -59,7 +64,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/price-sense"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   PriceSense
                 </Link>
@@ -69,12 +74,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-4">Solutions</h4>
+            <h4 
+              className="font-bold mb-4 text-lg"
+              style={{ backgroundImage: 'linear-gradient(135deg, #1f6fb2, #2ec4b6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+            >
+              Solutions
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/agentic-ai"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   Agentic AI
                 </Link>
@@ -82,7 +92,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/bussiness-intelligent"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   Business Intelligence
                 </Link>
@@ -90,7 +100,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/ai-knowledge-base"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   AI Knowledge Base
                 </Link>
@@ -98,7 +108,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/intelligent-infrastructure"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   Intelligent Infrastructure
                 </Link>
@@ -107,12 +117,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-4">Services</h4>
+            <h4 
+              className="font-bold mb-4 text-lg"
+              style={{ backgroundImage: 'linear-gradient(135deg, #1f6fb2, #2ec4b6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+            >
+              Services
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/enterprise-website-development"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   Enterprise Website Development
                 </Link>
@@ -120,7 +135,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/product-development"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   Product Development & Engineering
                 </Link>
@@ -128,7 +143,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/agentic-process-automation"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   AI & Agentic Process Automation
                 </Link>
@@ -136,7 +151,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/application-development"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   Application Development
                 </Link>
@@ -144,7 +159,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/growth-marketing"
-                  className="text-slate-400 hover:text-primary transition"
+                  className="text-white hover:text-primary transition"
                 >
                   MarTech & Growth Hacking
                 </Link>
@@ -158,19 +173,19 @@ export default function Footer() {
             <div className="flex flex-wrap gap-6 justify-center md:justify-start">
               <Link
                 href="/contact-us"
-                className="text-slate-400 hover:text-primary transition text-md"
+                className="text-white hover:text-primary transition text-md"
               >
                 Home
               </Link>
               <Link
                 href="/contact-us"
-                className="text-slate-400 hover:text-primary transition text-md"
+                className="text-white hover:text-primary transition text-md"
               >
                 Careers
               </Link>
               <Link
                 href="/contact-us"
-                className="text-slate-400 hover:text-primary transition text-md"
+                className="text-white hover:text-primary transition text-md"
               >
                 Contact us
               </Link>
@@ -180,14 +195,14 @@ export default function Footer() {
               <Link
                 href="https://www.linkedin.com/company/pi-bi-technologies"
                 target="_blank"
-                className="text-slate-400 hover:text-primary transition"
+                className="text-white hover:text-primary transition"
               >
                 <Linkedin className="w-5 h-5" />
               </Link>
               <Link
                 href="https://www.youtube.com/@PiBiTechnologies"
                 target="_blank"
-                className="text-slate-400 hover:text-primary transition"
+                className="text-white hover:text-primary transition"
               >
                 <Instagram className="w-5 h-5" />
 
@@ -195,15 +210,15 @@ export default function Footer() {
               <Link
                 href="https://www.instagram.com/pibi_technologies/"
                 target="_blank"
-                className="text-slate-400 hover:text-primary transition"
+                className="text-white hover:text-primary transition"
               >
                 <Youtube className="w-5 h-5" />
               </Link>
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-slate-700 text-center text-slate-500 text-md">
-            <p>
+          <div className="mt-8 pt-6 border-t border-slate-700 text-center text-white text-md">
+            <p className="text-white">
               &copy; {new Date().getFullYear()} Pibi Technologies. All rights
               reserved.
             </p>

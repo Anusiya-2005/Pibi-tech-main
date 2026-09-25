@@ -18,7 +18,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-14 md:h-16">
           <Link
             href="/"
-            className="text-2xl font-bold text-white flex items-center gap-1"
+            className="text-xl font-bold tracking-wide text-white flex items-center gap-2"
           >
             <div className="w-10 h-10 relative">
               <Image
