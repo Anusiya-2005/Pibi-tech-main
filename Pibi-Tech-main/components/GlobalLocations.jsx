@@ -24,7 +24,7 @@ const allOffices = [
   {
     country: "Madurai (India)",
     address: ["Thiruppalai, Madurai - 625014"],
-    image: "/madurai_office.jpg",
+    image: "/madurai.jpeg",
   },
 ];
 
