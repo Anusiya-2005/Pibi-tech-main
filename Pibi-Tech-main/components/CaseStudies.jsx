@@ -142,8 +142,7 @@ export default function CaseStudies() {
                 {/* Right Image */}
                 <div className="flex-[1.2] relative min-h-[300px] md:min-h-full">
                   <div 
-                    className="absolute inset-0 w-full h-full" 
-                    style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)' }}
+                    className="absolute inset-0 w-full h-full md:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]" 
                   >
                     <Image
                       src={item.image}
