@@ -153,7 +153,7 @@ export function MainPage() {
                     {slide.title}
                   </h1>
                   
-                  <p className="mt-6 max-w-2xl text-lg md:text-xl text-slate-300 mb-10 leading-relaxed animate-on-active delay-200">
+                  <p className="mt-6 max-w-2xl text-lg md:text-xl text-sky-100 drop-shadow-[0_2px_4px_rgba(31,111,178,0.5)] mb-10 leading-relaxed animate-on-active delay-200 font-medium">
                     {slide.subtitle}
                   </p>
 

@@ -59,7 +59,7 @@ export default function OurProducts() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
-                className={`flex-none sm:flex-1 py-5 px-6 sm:px-4 text-[11px] md:text-sm font-semibold uppercase tracking-widest transition-all relative ${activeTab === index ? "text-white" : "text-white/50 hover:text-white/80"
+                className={`flex-none sm:flex-1 py-4 px-3 sm:py-5 sm:px-4 text-[10px] sm:text-[11px] md:text-sm font-semibold uppercase tracking-wide sm:tracking-widest transition-all relative ${activeTab === index ? "text-white" : "text-white/50 hover:text-white/80"
                   }`}
               >
                 {tab.tabTitle}
