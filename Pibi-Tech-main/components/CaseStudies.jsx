@@ -147,7 +147,7 @@ export default function CaseStudies() {
                   >
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt={`${item.titleStart} ${item.titleHighlight}`}
                       fill
                       className="object-cover"
                     />

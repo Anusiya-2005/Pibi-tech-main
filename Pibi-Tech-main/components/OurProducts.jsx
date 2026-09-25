@@ -47,21 +47,20 @@ export default function OurProducts() {
           Applied AI with <span className="font-bold text-transparent bg-clip-text bg-[linear-gradient(135deg,#1f6fb2,#2ec4b6)]">real-world impact</span>
         </h2>
 
-        <div className="bg-white border border-slate-200 rounded-sm overflow-hidden shadow-xs">
+        <div className="bg-[#2A84AB] border border-white/20 rounded-xl overflow-hidden shadow-2xl">
           {/* Tabs Header */}
-          <div className="flex flex-col sm:flex-row border-b border-slate-200">
+          <div className="flex flex-col sm:flex-row border-b border-white/20">
             {tabs.map((tab, index) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
-                className={`flex-1 py-5 px-4 text-xs md:text-sm font-semibold uppercase tracking-widest transition-all relative ${
-                  activeTab === index ? "text-[#000052]" : "text-slate-400 hover:text-slate-600"
-                }`}
+                className={`flex-1 py-5 px-4 text-xs md:text-sm font-semibold uppercase tracking-widest transition-all relative ${activeTab === index ? "text-white" : "text-white/50 hover:text-white/80"
+                  }`}
               >
                 {tab.tabTitle}
-                {/* Active Tab Indicator with the requested gradient */}
+                {/* Active Tab Indicator */}
                 {activeTab === index && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[linear-gradient(135deg,#1f6fb2,#2ec4b6)]"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white"></div>
                 )}
               </button>
             ))}
@@ -72,18 +71,25 @@ export default function OurProducts() {
             <div className="flex flex-col lg:flex-row gap-12 items-center">
               {/* Left Content */}
               <div className="flex-1 lg:max-w-md">
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-800 mb-6">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/80 mb-6">
                   {tabs[activeTab].tag}
                 </p>
-                <h3 className="text-3xl md:text-4xl font-light text-[#000052] mb-6 leading-tight">
+                <h3 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
                   {tabs[activeTab].title}
                 </h3>
-                <p className="text-slate-600 text-lg mb-10 leading-relaxed hidden md:block">
+                <p className="text-white/90 text-lg mb-10 leading-relaxed hidden md:block">
                   {tabs[activeTab].description}
                 </p>
-                
-                {/* Button with gradient background */}
-                <button className="group relative inline-flex items-center justify-center gap-2 px-6 py-2.5 font-medium text-white transition-all rounded-full bg-[linear-gradient(135deg,#1f6fb2,#2ec4b6)] hover:opacity-90 hover:shadow-lg">
+
+                {/* Button with gradient hover */}
+                <button className="group relative inline-flex items-center justify-center px-6 py-2.5 font-bold text-[#2A84AB] hover:text-white transition-all duration-300 rounded-full bg-white hover:shadow-lg overflow-hidden">
+                  
+                  {/* Hover Gradient Background */}
+                  <div 
+                    className="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100" 
+                    style={{ backgroundImage: 'linear-gradient(135deg, #1f6fb2, #2ec4b6)' }}
+                  ></div>
+
                   <span className="relative z-10 flex items-center gap-2">
                     {tabs[activeTab].buttonText}
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -93,18 +99,16 @@ export default function OurProducts() {
 
               {/* Right Media */}
               <div className="flex-[1.5] w-full">
-                <div className="relative w-full aspect-[16/9] bg-slate-100 border border-slate-200 p-2 shadow-inner rounded-xl">
-                  <div className="relative w-full h-full overflow-hidden rounded-lg bg-black">
-                    <video
-                      key={tabs[activeTab].video}
-                      src={tabs[activeTab].video}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
+                <div className="relative w-full aspect-[16/9] overflow-hidden rounded-xl shadow-lg bg-black">
+                  <video
+                    key={tabs[activeTab].video}
+                    src={tabs[activeTab].video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="object-cover w-full h-full"
+                  />
                 </div>
               </div>
             </div>
