@@ -22,7 +22,7 @@ const indiaOffices = [
   {
     country: "Chennai (India)",
     address: ["Tharamani, Chennai - 600 113"],
-    image: "/chennai.jpeg",
+    image: "/chennai1.jpeg",
   },
   {
     country: "Madurai (India)",
