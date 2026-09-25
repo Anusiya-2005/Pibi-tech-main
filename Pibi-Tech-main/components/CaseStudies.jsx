@@ -16,7 +16,8 @@ export default function CaseStudies() {
   const cases = [
     {
       id: 1,
-      title: "Transforming a global fintech's sales operations with enterprise lead qualification",
+      titleStart: "Transforming a global fintech's",
+      titleHighlight: "sales operations with enterprise lead qualification",
       tags: ["FINTECH", "SALES", "LEAD QUALIFICATION"],
       metric: "47.6%",
       metricDesc: "conversion rate growth",
@@ -25,7 +26,8 @@ export default function CaseStudies() {
     },
     {
       id: 2,
-      title: "Collecting in-field driving data to train a leading insurance provider's rewards application",
+      titleStart: "Collecting in-field driving data",
+      titleHighlight: "to train a leading insurance provider's rewards application",
       tags: ["INSURANCE", "TELEMATICS", "DATA AI"],
       metric: "2,360",
       metricDesc: "test drives completed",
@@ -34,7 +36,8 @@ export default function CaseStudies() {
     },
     {
       id: 3,
-      title: "Enhancing customer satisfaction and brand perception for a global payment provider",
+      titleStart: "Enhancing customer satisfaction",
+      titleHighlight: "and brand perception for a global payment provider",
       tags: ["PAYMENTS", "CX", "BRAND PERCEPTION"],
       metric: "+86pp",
       metricDesc: "increase in brand Net Promoter Score",
@@ -75,8 +78,17 @@ export default function CaseStudies() {
               <div className="flex flex-col md:flex-row bg-[#2d2d2d] min-h-[500px]">
                 {/* Left Content */}
                 <div className="flex-1 p-8 md:p-14 flex flex-col justify-center relative z-10">
-                  <h3 className="text-2xl md:text-4xl font-light text-white mb-8 leading-tight">
-                    {item.title}
+                  <h3 className="text-2xl md:text-4xl font-semibold mb-8 leading-tight text-white">
+                    {item.titleStart}{" "}
+                    <span 
+                      style={{ 
+                        backgroundImage: 'linear-gradient(135deg, #1f6fb2, #2ec4b6)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent'
+                      }}
+                    >
+                      {item.titleHighlight}
+                    </span>
                   </h3>
 
                   <div className="flex flex-wrap gap-2 mb-10">
@@ -93,7 +105,14 @@ export default function CaseStudies() {
                   <hr className="border-white/20 mb-10" />
 
                   <div className="flex items-center gap-4 mb-10">
-                    <span className="text-4xl md:text-5xl font-light text-[#c2a3ff]">
+                    <span 
+                      className="text-5xl md:text-6xl font-bold tracking-tight"
+                      style={{ 
+                        backgroundImage: 'linear-gradient(135deg, #1f6fb2, #2ec4b6)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent'
+                      }}
+                    >
                       {item.metric}
                     </span>
                     <span className="text-slate-300 text-sm md:text-base max-w-[200px] leading-snug">
@@ -102,7 +121,18 @@ export default function CaseStudies() {
                   </div>
 
                   <div>
-                    <button className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/40 text-white text-sm hover:bg-white hover:text-black transition-all">
+                    <button 
+                      className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/40 text-white text-sm transition-all duration-300 hover:border-transparent hover:shadow-lg hover:shadow-[#1f6fb2]/30"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(31,111,178,0) 0%, rgba(46,196,182,0) 100%)', // Default transparent
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'linear-gradient(135deg, #1f6fb2, #2ec4b6)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'transparent';
+                      }}
+                    >
                       {item.buttonText}
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
