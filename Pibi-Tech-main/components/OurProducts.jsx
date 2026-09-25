@@ -10,30 +10,33 @@ export default function OurProducts() {
   const tabs = [
     {
       id: 0,
-      tabTitle: "PRIVATE LLM",
-      tag: "ENTERPRISE AI",
-      title: "Secure, Custom Large Language Models",
-      description: "Deploy proprietary foundational models trained on your enterprise data within your own secure perimeter, ensuring complete data privacy and maximum business relevance.",
-      buttonText: "Explore Solutions",
-      image: "/ai_ml_card.jpg",
-    },
-    {
-      id: 1,
       tabTitle: "AI TRAINING DATA",
       tag: "DATA PIPELINES",
       title: "High-Quality Data for Better Models",
       description: "We build robust data ingestion, cleaning, and annotation pipelines to provide your AI models with the high-quality, domain-specific training data they need to excel.",
       buttonText: "View Data Services",
       image: "/data_card.jpg",
+      video: "/ai (1).mp4",
     },
     {
-      id: 2,
+      id: 1,
       tabTitle: "AI INFRASTRUCTURE",
       tag: "CLOUD & COMPUTE",
       title: "Scalable Compute for AI Workloads",
       description: "Architect and deploy scalable, high-performance infrastructure specifically designed for the massive compute requirements of AI training and inference.",
       buttonText: "Discover Infrastructure",
       image: "/cloud_card.jpg",
+      video: "/iN.mp4",
+    },
+    {
+      id: 2,
+      tabTitle: "PRIVATE LLM",
+      tag: "ENTERPRISE AI",
+      title: "Secure, Custom Large Language Models",
+      description: "Deploy proprietary foundational models trained on your enterprise data within your own secure perimeter, ensuring complete data privacy and maximum business relevance.",
+      buttonText: "Explore Solutions",
+      image: "/ai_ml_card.jpg",
+      video: "/Video Project 2.mp4",
     },
   ];
 
@@ -93,7 +96,8 @@ export default function OurProducts() {
                 <div className="relative w-full aspect-[16/9] bg-slate-100 border border-slate-200 p-2 shadow-inner rounded-xl">
                   <div className="relative w-full h-full overflow-hidden rounded-lg bg-black">
                     <video
-                      src="/Video Project 2.mp4"
+                      key={tabs[activeTab].video}
+                      src={tabs[activeTab].video}
                       autoPlay
                       loop
                       muted

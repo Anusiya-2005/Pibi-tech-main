@@ -1,110 +1,81 @@
 "use client";
 
-import { HeartPulse, Factory, Rocket, Globe2 } from "lucide-react";
-import Image from "next/image";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/pagination";
+import { ArrowRight } from "lucide-react";
 
 export default function Specialist() {
   const specialties = [
     {
-      title: "Healthcare",
-      description:
-        "Streamlined clinical workflows and intelligent patient management processes designed for accuracy, compliance, and care continuity.",
-      icon: HeartPulse,
-      color: "bg-[#4FC6E0]",
+      title: "Healthcare & Life Science",
+      description: "Improving health outcomes with digital technologies and advanced analytics.",
+      image: "/healthcare_bg_1790309388960.jpg",
     },
     {
-      title: "Manufacturing",
-      description:
-        "Optimized facilities and AI-driven production workflows that increase efficiency, reduce downtime, and improve operational visibility.",
-      icon: Factory,
-      color: "bg-[#0066A4]",
+      title: "BFSI",
+      description: "Driving financial innovation, security, and next-gen customer experiences.",
+      image: "/bfsi_bg_1790309405403.jpg",
     },
     {
-      title: "SaaS Startups",
-      description:
-        "Scalable system architecture and AI acceleration enabling 5× faster agile execution and speed to market.",
-      icon: Rocket,
-      color: "bg-[#02B2E3]",
+      title: "Manufacturing & Automotive Industry",
+      description: "Next-gen PLM, MOM, and SLM Technologies enabling Industry 4.0.",
+      image: "/manufacturing_bg_1790309418400.jpg",
     },
     {
-      title: "GCC",
-      description:
-        "Localized intelligence systems designed to navigate regional regulations, supply chains, and market dynamics with confidence.",
-      icon: Globe2,
-      color: "bg-[#484393]",
+      title: "Retails & CMG",
+      description: "Transforming retail experiences and consumer goods supply chains.",
+      image: "/retail_bg_1790309435243.jpg",
+    },
+    {
+      title: "Governance & NSGO'S",
+      description: "Empowering public sectors and NGOs with scalable digital solutions.",
+      image: "/governance_bg_1790309448970.jpg",
+    },
+    {
+      title: "Agriculture",
+      description: "Advancing precision farming and sustainable agricultural technologies.",
+      image: "/agriculture_bg_1790309461763.jpg",
     },
   ];
 
-  const Card = ({ item }) => {
-    const Icon = item.icon;
-
-    return (
-      <div
-        className={`border border-slate-200 relative rounded-2xl p-6 h-full hover:shadow-xl transition-all duration-300 ${item.color} hover:brightness-110 text-white`}
-      >
-        <div className="flex items-center justify-center border w-max p-4 border-white rounded-full mb-5">
-          <Icon className="w-12 h-12" />
-        </div>
-
-        <div className="absolute -top-5 -right-5 rotate-12 opacity-20">
-          <div className="w-32 aspect-square relative">
-            <Image
-              src="/pi.png"
-              alt="PI-BI Technologies"
-              fill
-              className="object-contain"
-            />
-          </div>
-        </div>
-
-        <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-
-        <p className="leading-relaxed text-md text-white/80">
-          {item.description}
-        </p>
-      </div>
-    );
-  };
-
   return (
-    <section className="section-padding bg-white" id="Services">
-      <div className="container-max">
-        <div className="max-w-3xl mb-16">
+    <section className="py-20 bg-[linear-gradient(135deg,#1f6fb2,#2ec4b6)] text-white" id="Services">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-clip-text text-transparent bg-brand-gradient">
-              We are specialists at
-            </span>
+            Industry Expertise
           </h2>
-          <p className="text-slate-700 text-xl leading-relaxed">
-            Tailored vertical AI agents built for high-stakes industries where
-            precision, compliance, and performance matter most.
-          </p>
         </div>
 
-        <div className="block sm:hidden">
-          <Swiper
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
-            spaceBetween={20}
-            slidesPerView={1}
-          >
-            {specialties.map((item, index) => (
-              <SwiperSlide className="py-10 h-full" key={index}>
-                <Card item={item} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {specialties.map((item, index) => (
-            <Card key={index} item={item} />
+            <div
+              key={index}
+              className="relative overflow-hidden h-[300px] md:h-[340px] group cursor-pointer bg-slate-900 rounded-md"
+            >
+              <div className="absolute inset-0 z-0">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+              </div>
+
+              <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between w-full md:w-4/5">
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                    {item.title}
+                  </h3>
+                  
+                  <p className="text-slate-300 text-sm md:text-base leading-relaxed line-clamp-3">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="w-10 h-10 rounded-full border border-white/50 flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all">
+                  <ArrowRight size={18} />
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
