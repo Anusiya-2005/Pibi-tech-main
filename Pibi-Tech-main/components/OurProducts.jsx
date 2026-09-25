@@ -104,9 +104,9 @@ export default function OurProducts() {
                     key={tabs[activeTab].video}
                     src={tabs[activeTab].video}
                     autoPlay
-                    loop
                     muted
                     playsInline
+                    onEnded={() => setActiveTab((prev) => (prev + 1) % tabs.length)}
                     className="object-cover w-full h-full"
                   />
                 </div>
