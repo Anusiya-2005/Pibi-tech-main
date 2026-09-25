@@ -139,7 +139,7 @@ export function MainPage() {
                 </video>
               )}
               
-              <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/50 to-transparent z-0"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#030712]/70 via-[#030712]/20 to-transparent z-0"></div>
               
               <div className="relative z-10 w-full px-6 md:px-16 lg:px-24 xl:px-32 text-left">
                 <div className="max-w-3xl">

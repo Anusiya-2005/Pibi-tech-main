@@ -32,7 +32,7 @@ export default function CaseStudies() {
       metric: "2,360",
       metricDesc: "test drives completed",
       buttonText: "Read the case study",
-      image: "/driving_data_case_1790310638313.jpg",
+      image: "/car.jpeg",
     },
     {
       id: 3,

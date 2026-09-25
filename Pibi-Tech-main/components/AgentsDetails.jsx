@@ -13,42 +13,42 @@ const AgentsDetails = ({ title, id }) => {
       id: 1,
       title: "AI/ML",
       description: "Empower your business with predictive models, deep learning, and intelligent automation to unlock new opportunities.",
-      image: "/final_ai.jpg",
+      image: "/ai.png",
       link: "/contact-us"
     },
     {
       id: 2,
       title: "Data",
       description: "Transform raw data into actionable insights with robust data pipelines, modern data warehousing, and advanced analytics.",
-      image: "/final_data.jpg",
+      image: "/data.jpeg",
       link: "/contact-us"
     },
     {
       id: 3,
       title: "Cloud & Infrastructure",
       description: "Build scalable, secure, and resilient cloud architectures that drive agility and modernize your IT foundation.",
-      image: "/final_cloud.jpg",
+      image: "/cloud.jpeg",
       link: "/contact-us"
     },
     {
       id: 4,
       title: "Product Engineering",
       description: "Accelerate your product lifecycle with end-to-end engineering, from ideation and prototyping to deployment and scale.",
-      image: "/final_product.jpg",
+      image: "/p.png",
       link: "/contact-us"
     },
     {
       id: 5,
       title: "Digital Engineering",
       description: "Create seamless, user-centric digital experiences by modernizing legacy systems and adopting cutting-edge tech stacks.",
-      image: "/final_digital.jpg",
+      image: "/dig.jpeg",
       link: "/contact-us"
     },
     {
       id: 6,
       title: "Security & GRC",
       description: "Safeguard your enterprise with comprehensive cybersecurity strategies, compliance frameworks, and proactive risk management.",
-      image: "/final_security.jpg",
+      image: "/grc.jpeg",
       link: "/contact-us"
     },
   ];
@@ -56,7 +56,7 @@ const AgentsDetails = ({ title, id }) => {
   const Card = ({ card }) => (
     <div
       onClick={() => router.push(card.link)}
-      className="group flex flex-col overflow-hidden rounded-xl cursor-pointer bg-[#0b101a] border border-[#1f2937] hover:border-blue-500/50 transition-colors duration-300 h-full"
+      className="group flex flex-col overflow-hidden rounded-xl cursor-pointer bg-[#2a2a2a] border border-[#3f3f3f] hover:border-blue-500/50 transition-all duration-300 h-full"
     >
       {/* Top Half: Image */}
       <div className="relative w-full h-[220px] overflow-hidden">
@@ -67,19 +67,31 @@ const AgentsDetails = ({ title, id }) => {
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
         {/* Subtle gradient to blend into the card background */}
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0b101a] to-transparent"></div>
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#2a2a2a] to-transparent"></div>
       </div>
 
       {/* Bottom Half: Content */}
       <div className="p-6 md:p-8 flex flex-col flex-grow">
-        <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
+        <h3 
+          className="text-2xl font-bold mb-4"
+          style={{ 
+            backgroundImage: 'linear-gradient(135deg, #1f6fb2, #2ec4b6)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}
+        >
+          {card.title}
+        </h3>
         
-        <p className="text-slate-300 text-[15px] leading-relaxed mb-8">
+        <p className="text-white/90 text-[15px] leading-relaxed mb-8">
           {card.description}
         </p>
         
         {/* Arrow Icon */}
-        <div className="mt-auto w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#0b101a] transition-colors">
+        <div 
+          className="mt-auto w-10 h-10 rounded-full flex items-center justify-center text-white group-hover:opacity-90 transition-all shadow-md shadow-[#2ec4b6]/20"
+          style={{ backgroundImage: 'linear-gradient(135deg, #1f6fb2, #2ec4b6)' }}
+        >
           <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
         </div>
       </div>
@@ -89,7 +101,7 @@ const AgentsDetails = ({ title, id }) => {
   return (
     <section className="relative py-20 overflow-hidden bg-[linear-gradient(135deg,#1f6fb2,#2ec4b6)]" id={id || "Solutions"}>
       {/* Side Vignette (Dark edges) */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
+      <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-r from-black/15 via-transparent to-black/15"></div>
 
       {/* Network Pattern Overlay */}
       <div 

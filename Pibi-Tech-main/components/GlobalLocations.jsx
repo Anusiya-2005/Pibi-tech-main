@@ -34,8 +34,8 @@ const indiaOffices = [
 // Helper Component for a single location card to avoid duplication
 const LocationCard = ({ loc }) => (
   <div className="group relative h-[400px] w-full cursor-pointer [perspective:1500px]">
-    {/* Card Container for 3D flip */}
-    <div className="w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-xl hover:shadow-2xl hover:shadow-[#1f6fb2]/40 rounded-3xl">
+    {/* Card Container for 3D flip - Restricted to desktop hover */}
+    <div className="w-full h-full transition-all duration-700 [transform-style:preserve-3d] md:group-hover:[transform:rotateY(180deg)] shadow-xl hover:shadow-2xl hover:shadow-[#1f6fb2]/40 rounded-3xl">
       
       {/* Front Side */}
       <div className="absolute inset-0 [backface-visibility:hidden] rounded-3xl overflow-hidden bg-black">
@@ -45,18 +45,26 @@ const LocationCard = ({ loc }) => (
           fill
           className="object-cover contrast-[1.15] saturate-[1.2]"
         />
-        {/* Lighter Gradient Overlay so the image is more visible */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+        {/* Darker Gradient Overlay at the bottom for readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
         
-        {/* Title on Front */}
-        <div className="absolute bottom-8 left-8">
-          <h3 className="text-3xl font-bold text-white drop-shadow-md">
+        {/* Title and Mobile Address on Front */}
+        <div className="absolute bottom-8 left-8 right-8">
+          <h3 className="text-3xl font-bold text-white drop-shadow-md mb-2">
             {loc.country}
           </h3>
+          {/* Address visible directly on mobile, hidden on desktop (desktop uses flip) */}
+          <div className="md:hidden flex flex-col gap-1">
+            {loc.address.map((line, idx) => (
+              <p key={idx} className="text-white/90 text-[15px] font-medium leading-snug drop-shadow-sm">
+                {line}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Back Side */}
+      {/* Back Side (Desktop hover only) */}
       <div 
         className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl overflow-hidden p-8 flex flex-col justify-center"
         style={{ backgroundImage: 'linear-gradient(135deg, #1f6fb2, #2ec4b6)' }}

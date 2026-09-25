@@ -16,7 +16,7 @@ export default function OurProducts() {
       description: "We build robust data ingestion, cleaning, and annotation pipelines to provide your AI models with the high-quality, domain-specific training data they need to excel.",
       buttonText: "View Data Services",
       image: "/data_card.jpg",
-      video: "/ai (1).mp4",
+      video: "/iN.mp4",
     },
     {
       id: 1,
@@ -26,7 +26,7 @@ export default function OurProducts() {
       description: "Architect and deploy scalable, high-performance infrastructure specifically designed for the massive compute requirements of AI training and inference.",
       buttonText: "Discover Infrastructure",
       image: "/cloud_card.jpg",
-      video: "/iN.mp4",
+      video: "/ai (1).mp4",
     },
     {
       id: 2,
@@ -49,12 +49,17 @@ export default function OurProducts() {
 
         <div className="bg-[#2A84AB] border border-white/20 rounded-xl overflow-hidden shadow-2xl">
           {/* Tabs Header */}
-          <div className="flex flex-col sm:flex-row border-b border-white/20">
+          <div className="flex flex-row overflow-x-auto whitespace-nowrap border-b border-white/20" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <style jsx>{`
+              div::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
             {tabs.map((tab, index) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
-                className={`flex-1 py-5 px-4 text-xs md:text-sm font-semibold uppercase tracking-widest transition-all relative ${activeTab === index ? "text-white" : "text-white/50 hover:text-white/80"
+                className={`flex-none sm:flex-1 py-5 px-6 sm:px-4 text-[11px] md:text-sm font-semibold uppercase tracking-widest transition-all relative ${activeTab === index ? "text-white" : "text-white/50 hover:text-white/80"
                   }`}
               >
                 {tab.tabTitle}
@@ -67,17 +72,17 @@ export default function OurProducts() {
           </div>
 
           {/* Tab Content */}
-          <div className="p-8 md:p-12">
-            <div className="flex flex-col lg:flex-row gap-12 items-center">
+          <div className="p-6 md:p-12">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
               {/* Left Content */}
-              <div className="flex-1 lg:max-w-md">
-                <p className="text-xs font-bold uppercase tracking-widest text-white/80 mb-6">
+              <div className="flex-1 lg:max-w-md w-full">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/80 mb-4 md:mb-6">
                   {tabs[activeTab].tag}
                 </p>
-                <h3 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4 md:mb-6 leading-tight">
                   {tabs[activeTab].title}
                 </h3>
-                <p className="text-white/90 text-lg mb-10 leading-relaxed hidden md:block">
+                <p className="text-white/90 text-[15px] sm:text-base md:text-lg mb-8 md:mb-10 leading-relaxed block">
                   {tabs[activeTab].description}
                 </p>
 
